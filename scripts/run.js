@@ -29,8 +29,11 @@ const main = async () => {
     waveTxn = await waveContract.connect(randomPerson).wave('Hi There, Second!');
     await waveTxn.wait();
 
+    // This should fail ("Wait 15min")
+    /*
     waveTxn = await waveContract.connect(randomPerson).wave('Hi There, Third!');
     await waveTxn.wait();
+    */
 
     waveCount = await waveContract.getTotalWaves();
 
