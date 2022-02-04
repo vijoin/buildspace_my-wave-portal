@@ -28,7 +28,7 @@ contract WavePortal {
 
     function wave(string memory _message) public {
 
-        require(lastWavedAt[msg.sender] + 15 minutes < block.timestamp,
+        require(lastWavedAt[msg.sender] + 30 seconds < block.timestamp,
         "Wait 15min");
 
         lastWavedAt[msg.sender] = block.timestamp;
@@ -73,3 +73,7 @@ contract WavePortal {
     }
 
 }
+
+//ToDo: Show Loading while waiting Txn confirmation
+//ToDo: Show error message to the user when trying to spam
+//ToDo: Show if they won the price or not
